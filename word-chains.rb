@@ -34,8 +34,7 @@ class WordChainer
     @current_words = [source]
     @all_seen_words = { source => nil }
     until @all_seen_words.key?(target) || @current_words.empty?
-      new_current_words = explore_current_words
-      @current_words = new_current_words
+      @current_words = explore_current_words
     end
     path = build_path(target)
     path.length > 1 ? path : 'No path found.'
